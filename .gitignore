@@ -1,0 +1,9 @@
+.venv 
+.env
+*.log
+.vscode
+main
+main.exe
+*.o
+*.out
+build/
