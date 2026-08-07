@@ -16,9 +16,9 @@ None yet.
     git clone ctictactoe
     cd ctictactoe
 
-### Run linker
+### Run compiler
 
-    gcc main.c checker.c extract_lines.c location.c -o program
+    gcc main.c checker.c extract_lines.c location.c extract_row.c extract_col.c -o program
 
 
 ## Running
