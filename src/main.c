@@ -29,7 +29,7 @@
 
 int8_t debug = 1; // debug mode 0=off, 1=on
 int8_t player = 1; // current player (1 or 2)
-int8_t cell = 1; // cell id which was last played
+int8_t cell = 18; // cell id which was last played
 int8_t win_length = 4; // amount of consecutive cells needed to win
 int8_t line[BOARD_WIDTH] = {0};
 
@@ -41,7 +41,7 @@ int8_t line[BOARD_WIDTH] = {0};
     1,1,2,0,0,0,0,0,2,2,
     1,0,0,2,0,0,0,2,0,2,
     1,0,0,0,2,0,2,0,0,2,
-    1,0,0,0,0,2,0,0,0,2,
+    0,0,0,0,0,2,0,0,0,2,
     1,0,0,0,2,0,0,0,0,2,
     2,2,2,2,0,0,0,2,2,2,
     1,0,2,0,0,0,0,2,0,2,
@@ -65,7 +65,7 @@ int8_t line[BOARD_WIDTH] = {0};
 */
 int8_t main() {
 
-    int8_t result = extract_lines(cell);
+    int8_t result = extract_lines();
 
     if (result==1) { 
         printf("Win to player: %d\n", player);

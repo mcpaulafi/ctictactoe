@@ -7,28 +7,45 @@
 #include "extract_lines.h"
 #include "checker.h"
 
+int8_t give_row(int8_t localcell){
+    if (localcell <=0 || localcell >= BOARD_WIDTH*BOARD_WIDTH) {
+        if(debug) {printf("Invalid cell index: %d\n", localcell);}
+        return -1; // Invalid cell index
+    }
+    return (localcell) / BOARD_WIDTH;
+}
 
-int8_t extract_lines(int8_t cell){
+int8_t give_column(int8_t localcell){
+    if (localcell <=0 || localcell >= BOARD_WIDTH*BOARD_WIDTH) {
+        if(debug) {printf("Invalid cell index: %d\n", localcell);}
+        return -1; // Invalid cell index
+    }
+    return (localcell) % BOARD_WIDTH;
+}
+
+int8_t extract_lines(void){
     if (cell <=0 || cell >= BOARD_WIDTH*BOARD_WIDTH) {
         if(debug) {printf("Invalid cell index: %d\n", cell);}
         return -1; // Invalid cell index
     }
 
-    cell--; // Adjust for 0-based indexing
-    int8_t row_idx = cell / BOARD_WIDTH;
-    int8_t col_idx = cell % BOARD_WIDTH;
+    int8_t row_idx = give_row(cell);
+    int8_t col_idx = give_column(cell);
+
+    if (debug) {printf("Extracting lines for cell: %d (Row: %d, Column: %d)\n", cell, row_idx, col_idx);}
 
     if (extract_row(row_idx) == 1) {
         return 1;
     }
     else if (extract_column(col_idx) == 1) {
         return 1;
+    }else if (extract_diagonal_descending(row_idx, col_idx) == 1) {
+        return 1;
+    }else if (extract_diagonal_ascending(row_idx, col_idx) == 1) {
+        return 1;
     }else {
         return 0;
     }
-    //DIAGONAL DESCENDING
-    //DIAGONAL ASCENDING
-
 
     return 0;
 }
@@ -57,10 +74,47 @@ int8_t extract_column(int8_t col_idx){
     }
 
     memset(line, 0, sizeof(line)); // Reset line array
-    if (debug) {printf("Checking column: \n");}
+    if (debug) {printf("Checking column: %d\n", col_idx);}
     for (int r = 0; r < BOARD_WIDTH; r++) {
         line[r] = gameboard[r * BOARD_WIDTH + col_idx];
         if (debug) {printf("Cell: %d Value: %d\n", r * BOARD_WIDTH + col_idx, line[r]);}
     }
     return check_line();
+}
+
+//Check diagonal descending function
+int8_t extract_diagonal_descending(int8_t row_idx, int8_t col_idx){
+    if (debug) {printf("Checking diagonal descending: \n");}
+    memset(line, 0, sizeof(line)); // Reset line array
+    int8_t start_cell;
+    if (row_idx == col_idx) {
+        start_cell = 0; // Top-left corner
+    } else if (row_idx > col_idx) {
+        start_cell = (row_idx - col_idx) * BOARD_WIDTH; // Move up to the first row
+    } else {
+        start_cell = col_idx - row_idx; // Move left to the first column
+    }
+    if (debug) {printf("Start cell: %d\n", start_cell);}
+    for (int i = 0; i < BOARD_WIDTH; i++) {
+        int8_t cell_idx = start_cell + i * (BOARD_WIDTH + 1);
+        if (cell_idx >= BOARD_WIDTH * BOARD_WIDTH) {
+            break; // Stop if we go out of bounds
+        }
+        line[i] = gameboard[cell_idx];
+        if (debug) {printf("Cell: %d Value: %d\n", cell_idx, line[i]);}
+        if (give_row(cell_idx) >= BOARD_WIDTH-1 || give_column(cell_idx) >= BOARD_WIDTH-1) {
+            break; // Stop if we go out of the diagonal
+        }
+    }
+    if (sizeof(line) < win_length) {
+        return 0; // Diagonal line is too short to check for a win
+    }
+    return check_line();
+}
+
+//Check diagonal ascending function
+int8_t extract_diagonal_ascending(int8_t row_idx, int8_t col_idx){
+    // Implementation for ascending diagonal
+    return -1; // Placeholder, replace with actual implementation
+
 }
