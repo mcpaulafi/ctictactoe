@@ -6,22 +6,7 @@
 #include "common.h"
 #include "extract_lines.h"
 #include "checker.h"
-
-int8_t give_row(int8_t localcell){
-    if (localcell <=0 || localcell >= BOARD_WIDTH*BOARD_WIDTH) {
-        if(debug) {printf("Invalid cell index: %d\n", localcell);}
-        return -1; // Invalid cell index
-    }
-    return (localcell) / BOARD_WIDTH;
-}
-
-int8_t give_column(int8_t localcell){
-    if (localcell <=0 || localcell >= BOARD_WIDTH*BOARD_WIDTH) {
-        if(debug) {printf("Invalid cell index: %d\n", localcell);}
-        return -1; // Invalid cell index
-    }
-    return (localcell) % BOARD_WIDTH;
-}
+#include "location.h"
 
 int8_t extract_lines(void){
     if (cell <=0 || cell >= BOARD_WIDTH*BOARD_WIDTH) {
@@ -29,8 +14,12 @@ int8_t extract_lines(void){
         return -1; // Invalid cell index
     }
 
-    int8_t row_idx = give_row(cell);
-    int8_t col_idx = give_column(cell);
+
+    Location location = give_location(cell); // Column, Row
+    if (debug) {printf("Location: Column: %d, Row: %d\n", location.col, location.row);}
+
+    int8_t row_idx = location.row;
+    int8_t col_idx = location.col;
 
     if (debug) {printf("Extracting lines for cell: %d (Row: %d, Column: %d)\n", cell, row_idx, col_idx);}
 
@@ -102,7 +91,10 @@ int8_t extract_diagonal_descending(int8_t row_idx, int8_t col_idx){
         }
         line[i] = gameboard[cell_idx];
         if (debug) {printf("Cell: %d Value: %d\n", cell_idx, line[i]);}
-        if (give_row(cell_idx) >= BOARD_WIDTH-1 || give_column(cell_idx) >= BOARD_WIDTH-1) {
+
+        Location location_check = give_location(cell_idx); // Column, Row
+
+        if (location_check.row >= BOARD_WIDTH-1 || location_check.col >= BOARD_WIDTH-1) {
             break; // Stop if we go out of the diagonal
         }
     }
