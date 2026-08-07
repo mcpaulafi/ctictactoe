@@ -17,6 +17,7 @@
 /* 
 * Include my own libraries
 */
+#include "common.h"
 //#include "check_win.h"
 //#include "extract_lines.h"
 
@@ -24,11 +25,9 @@
 * Global variables
 */
 int8_t debug = 1; // debug mode 0=off, 1=on
-
-#define BOARD_WIDTH 10
-int8_t board_width = BOARD_WIDTH;
+int8_t board_width = BOARD_WIDTH; // amount of cells in a row/column of the gameboard
 int8_t cell = 1; // cell id which was last played
-int8_t win_length = 4; 
+int8_t win_length = 4; // amount of consecutive cells needed to win
 
 /* 
 * Prototypes
