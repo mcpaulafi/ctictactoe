@@ -18,14 +18,15 @@ None yet.
 
 ### Run linker
 
-    gcc src/main.c -o main -lm
+    cd ctictactoe
+    gcc main.c checker.c -o program
 
 
 ## Running
 After installation
 
     cd ctictactoe
-    ./main
+    ./program
 
 ## Testing
 TBD
