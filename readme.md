@@ -18,7 +18,7 @@ None yet.
 
 ### Run linker
 
-    gcc main.c checker.c extract_lines.c -o program
+    gcc main.c checker.c extract_lines.c location.c -o program
 
 
 ## Running

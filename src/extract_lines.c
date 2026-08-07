@@ -14,23 +14,18 @@ int8_t extract_lines(void){
         return -1; // Invalid cell index
     }
 
-
     Location location = give_location(cell); // Column, Row
+
     if (debug) {printf("Location: Column: %d, Row: %d\n", location.col, location.row);}
 
-    int8_t row_idx = location.row;
-    int8_t col_idx = location.col;
-
-    if (debug) {printf("Extracting lines for cell: %d (Row: %d, Column: %d)\n", cell, row_idx, col_idx);}
-
-    if (extract_row(row_idx) == 1) {
+    if (extract_row(location.row) == 1) {
         return 1;
     }
-    else if (extract_column(col_idx) == 1) {
+    else if (extract_column(location.col) == 1) {
         return 1;
-    }else if (extract_diagonal_descending(row_idx, col_idx) == 1) {
+    }else if (extract_diagonal_descending(location.row, location.col) == 1) {
         return 1;
-    }else if (extract_diagonal_ascending(row_idx, col_idx) == 1) {
+    }else if (extract_diagonal_ascending(location.row, location.col) == 1) {
         return 1;
     }else {
         return 0;
@@ -84,6 +79,7 @@ int8_t extract_diagonal_descending(int8_t row_idx, int8_t col_idx){
         start_cell = col_idx - row_idx; // Move left to the first column
     }
     if (debug) {printf("Start cell: %d\n", start_cell);}
+
     for (int i = 0; i < BOARD_WIDTH; i++) {
         int8_t cell_idx = start_cell + i * (BOARD_WIDTH + 1);
         if (cell_idx >= BOARD_WIDTH * BOARD_WIDTH) {
