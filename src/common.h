@@ -12,4 +12,8 @@ extern int8_t win_length; // amount of consecutive cells needed to win
 
 #define BOARD_WIDTH 10 
 
+
+//Test gameboard for testing the functions
+extern int8_t gameboard[100];
+
 #endif
