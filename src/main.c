@@ -17,6 +17,7 @@
 /* 
 * Include my own libraries
 */
+
 #include "common.h"
 #include "checker.h"
 #include "extract_lines.h"
@@ -25,10 +26,12 @@
 /* 
 * Global variables
 */
+
 int8_t debug = 1; // debug mode 0=off, 1=on
-int8_t board_width = BOARD_WIDTH; // amount of cells in a row/column of the gameboard
+int8_t player = 1; // current player (1 or 2)
 int8_t cell = 1; // cell id which was last played
 int8_t win_length = 4; // amount of consecutive cells needed to win
+int8_t line[BOARD_WIDTH] = {0};
 
 /* 
 * Prototypes
@@ -65,9 +68,11 @@ int8_t main() {
     int8_t result = extract_lines(cell);
 
     if (result==1) { 
-        printf("Win to player: %d\n", gameboard[cell]); 
+        printf("Win to player: %d\n", player);
+    } else if (result==-1){
+        printf("Error\n");
     }else { 
-        printf("No win yet\n"); 
+        printf("No win yet\n");
     } 
 
     return 0;
