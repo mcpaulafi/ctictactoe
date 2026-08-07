@@ -18,14 +18,12 @@ None yet.
 
 ### Run linker
 
-    cd ctictactoe
-    gcc main.c checker.c -o program
+    gcc main.c checker.c extract_lines.c -o program
 
 
 ## Running
 After installation
 
-    cd ctictactoe
     ./program
 
 ## Testing

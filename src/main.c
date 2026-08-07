@@ -19,6 +19,7 @@
 */
 #include "common.h"
 #include "checker.h"
+#include "extract_lines.h"
 
 
 /* 
