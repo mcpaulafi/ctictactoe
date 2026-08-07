@@ -16,4 +16,9 @@ extern int8_t player; // current player (1 or 2)
 //Test gameboard for testing the functions
 extern int8_t gameboard[100];
 
+typedef struct {
+    int8_t col;
+    int8_t row;
+} Location;
+
 #endif

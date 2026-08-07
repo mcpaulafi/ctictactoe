@@ -4,9 +4,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "common.h"
-#include "extract_row.h"
 #include "extract_col.h"
-#include "extract_lines.h"
 #include "checker.h"
 
 int8_t extract_column(int8_t col_idx){

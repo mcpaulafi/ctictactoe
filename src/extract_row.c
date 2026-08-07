@@ -5,7 +5,6 @@
 #include <stdlib.h>
 #include "common.h"
 #include "extract_row.h"
-#include "extract_lines.h"
 #include "checker.h"
 
 //Check row function
