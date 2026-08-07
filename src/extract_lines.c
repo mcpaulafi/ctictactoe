@@ -10,7 +10,7 @@
 
 int8_t extract_lines(void){
     if (cell <=0 || cell >= BOARD_WIDTH*BOARD_WIDTH) {
-        if(debug) {printf("Invalid cell index: %d\n", cell);}
+        if (debug) {printf("Invalid cell index: %d\n", cell);}
         return -1; // Invalid cell index
     }
 
@@ -18,6 +18,7 @@ int8_t extract_lines(void){
 
     if (debug) {printf("Location: Column: %d, Row: %d\n", location.col, location.row);}
 
+    //Check row, column, and diagonals
     if (extract_row(location.row) == 1) {
         return 1;
     }
@@ -30,8 +31,6 @@ int8_t extract_lines(void){
     }else {
         return 0;
     }
-
-    return 0;
 }
 
 //Check row function
@@ -102,7 +101,37 @@ int8_t extract_diagonal_descending(int8_t row_idx, int8_t col_idx){
 
 //Check diagonal ascending function
 int8_t extract_diagonal_ascending(int8_t row_idx, int8_t col_idx){
-    // Implementation for ascending diagonal
-    return -1; // Placeholder, replace with actual implementation
+    if (debug) {printf("Checking diagonal ascending: %d %d\n", row_idx, col_idx);}
+    memset(line, 0, sizeof(line)); // Reset line array
+    int8_t start_cell;
+    if (row_idx + col_idx <= BOARD_WIDTH) {
+        start_cell = row_idx + col_idx; // Move up to the first row
+    } else {
+        int8_t start_row = (row_idx - ((BOARD_WIDTH - 1) - col_idx)); //Move down to the last column
+        printf("Start row: %d\n", start_row);
+        start_cell = BOARD_WIDTH * (start_row + 1)-1; // Move down to the last row
+    }
+    if (debug) {printf("Start cell: %d\n", start_cell);}
+
+    int8_t cell_idx = start_cell;
+    for (int i = 0; i < BOARD_WIDTH; i++) {
+        line[i] = gameboard[cell_idx];
+        if (debug) {printf("Cell: %d Value: %d\n", cell_idx, line[i]);}
+
+        cell_idx += (BOARD_WIDTH - 1);
+        if (cell_idx >= BOARD_WIDTH * BOARD_WIDTH) {
+            break; // Stop if we go out of bounds
+        }
+
+        Location location_check = give_location(cell_idx); // Column, Row
+
+        if (location_check.row >= BOARD_WIDTH || location_check.col < 0) {
+            break; // Stop if we go out of the diagonal
+        }
+    }
+    if (sizeof(line) < win_length) {
+        return 0; // Diagonal line is too short to check for a win
+    }
+    return check_line();
 
 }
