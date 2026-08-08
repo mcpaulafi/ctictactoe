@@ -8,6 +8,10 @@ Tämä on yksinkertainen tekstipohjainen ristinollapeli kirjoitettuna C-ohjelmoi
 ## Documentation
 TBD
 
+## Known bugs
+- Tie result
+- Top right corner check
+
 ## Releases
 None yet.
 

@@ -41,7 +41,8 @@ int main(void) {
         int8_t result = extract_lines();
 
         if (result==1) { 
-            printf("Win to player: %d\n", player);
+            printf("***********************************\n");
+            printf("***** Win to player: %d !!!   *****\n", player);
             print_gameboard();
             return 0;
         } else if (result==-1){
