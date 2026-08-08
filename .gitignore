@@ -8,4 +8,4 @@ main.exe
 *.out
 build/
 program
-test*
+testrun_*
