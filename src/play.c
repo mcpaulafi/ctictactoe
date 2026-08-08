@@ -10,7 +10,7 @@ int8_t input_cell(void){
     int cell;
     int8_t ok = 0;
     while (ok != 1){
-        printf("Enter a cell number: ");
+        printf("Player %d, Enter a cell number: ", player);
         char buf[32];
         char extra;
 
