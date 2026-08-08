@@ -4,7 +4,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "common.h"
-#include "extract_row.h"
+#include "row.h"
 #include "checker.h"
 
 //Check row function

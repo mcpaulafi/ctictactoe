@@ -1,6 +1,6 @@
 /* Extract column function */
-#ifndef EXTRACT_COL_H
-#define EXTRACT_COL_H
+#ifndef COL_H
+#define COL_H
 
 #include <inttypes.h>
 

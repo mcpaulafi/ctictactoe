@@ -1,4 +1,5 @@
-/* Checker functions implementation*/
+/* Checker implementation*/
+// Calculates consecutive cells in a line and checks for a winner
 #include <stdio.h>
 #include <inttypes.h>
 #include <string.h>

@@ -18,7 +18,7 @@ None yet.
 
 ### Run compiler
 
-    gcc main.c checker.c extract_lines.c location.c extract_row.c extract_col.c extract_diag_asc.c extract_diag_desc.c -o program
+    gcc main.c checker.c extract_lines.c location.c row.c col.c diag_asc.c diag_desc.c -o program
 
 
 ## Running

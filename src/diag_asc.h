@@ -1,6 +1,6 @@
 /* Extract diagonal ascending function */
-#ifndef EXTRACT_DIAG_ASC_H
-#define EXTRACT_DIAG_ASC_H
+#ifndef DIAG_ASC_H
+#define DIAG_ASC_H
 
 #include <inttypes.h>
 

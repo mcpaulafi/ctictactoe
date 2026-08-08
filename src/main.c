@@ -14,12 +14,12 @@
 #include <string.h>
 #include <stdlib.h>
 //#include <math.h> add -lm option to linker
+
 /* 
 * Include my own libraries
 */
 
 #include "common.h"
-#include "checker.h"
 #include "extract_lines.h"
 
 

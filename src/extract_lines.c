@@ -4,10 +4,10 @@
 #include <string.h>
 #include <stdlib.h>
 #include "common.h"
-#include "extract_row.h"
-#include "extract_col.h"
-#include "extract_diag_asc.h"
-#include "extract_diag_desc.h"
+#include "row.h"
+#include "col.h"
+#include "diag_asc.h"
+#include "diag_desc.h"
 #include "extract_lines.h"
 #include "checker.h"
 #include "location.h"

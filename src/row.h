@@ -1,6 +1,6 @@
 /* Extract row function */
-#ifndef EXTRACT_ROW_H
-#define EXTRACT_ROW_H
+#ifndef ROW_H
+#define ROW_H
 
 #include <inttypes.h>
 

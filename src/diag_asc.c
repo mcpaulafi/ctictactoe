@@ -4,7 +4,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "common.h"
-#include "extract_diag_asc.h"
+#include "diag_asc.h"
 #include "checker.h"
 #include "location.h"
 
