@@ -37,10 +37,16 @@ int main(void) {
         printf("Player %d\n", player);
         print_gameboard();
         cell = input_cell();
+        if (cell == -1){
+            printf("***********************************\n");
+            printf("***** Tie - no wins!!!   *****\n");
+            print_gameboard();
+            return 0;
+        }
         int update = update_board();
         int8_t result = extract_lines();
 
-        if (result==1) { 
+        if (result==1) {
             printf("***********************************\n");
             printf("***** Win to player: %d !!!   *****\n", player);
             print_gameboard();

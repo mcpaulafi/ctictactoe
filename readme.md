@@ -8,7 +8,8 @@ Tämä on yksinkertainen tekstipohjainen ristinollapeli kirjoitettuna C-ohjelmoi
 ## Documentation
 TBD
 
-## Known bugs
+## Known bugs and issues
+- Board size is not handled properly which causes error
 - Tie result
 - Top right corner check
 
