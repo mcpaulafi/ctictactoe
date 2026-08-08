@@ -13,7 +13,7 @@
 #include "location.h"
 
 int8_t extract_lines(void){
-    if (cell <=0 || cell >= BOARD_WIDTH*BOARD_WIDTH) {
+    if (cell <=1 || cell >= BOARD_WIDTH*BOARD_WIDTH+1) {
         if (debug) {printf("Invalid cell index: %d\n", cell);}
         return -1; // Invalid cell index
     }

@@ -27,39 +27,10 @@
 
 
 /* 
-* Global variables, declarations in common.h
-*/
-
-int8_t debug = 0; // debug mode 0=off, 1=on
-int8_t cell = 2; // cell id which was last played
-int8_t win_length = 3; // amount of consecutive cells needed to win
-int8_t player = 1; // current player (1 or 2)
-int8_t line[BOARD_WIDTH] = {0};
-int8_t gameboard[BOARD_WIDTH*BOARD_WIDTH];
-
-/* 
-* Prototypes
-*/
-
-
-//  int8_t gameboard[100] = {
-//     2,2,1,1,1,0,1,2,2,2,
-//     1,1,2,0,0,0,0,0,2,2,
-//     1,0,0,2,0,0,0,2,0,2,
-//     1,0,0,0,2,0,2,0,0,2,
-//     0,0,0,0,0,2,0,0,0,2,
-//     1,0,0,0,2,0,0,0,0,2,
-//     2,2,2,2,0,0,0,2,2,2,
-//     1,0,2,0,0,0,0,2,0,2,
-//     1,1,0,0,0,0,2,0,0,2,
-//     2,1,1,0,1,1,1,0,1,1
-//     };
-
-
-/* 
 *  Main function
 */
 int main(void) {
+    printf("* Win with line of: %d             *\n", win_length);
 
     memset(gameboard, 0, sizeof(gameboard)); //Initialize game board
     while(1){

@@ -38,7 +38,5 @@ void print_gameboard(void) {
         printf("\n");
     }
     printf("***********************************\n");
-    printf("* Win with line of: %d             *\n", win_length);
-    printf("***********************************\n");
     printf("\n\n");
 }

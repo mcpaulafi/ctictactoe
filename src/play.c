@@ -32,6 +32,8 @@ int8_t input_cell(void){
         cell > BOARD_WIDTH * BOARD_WIDTH) {
             printf("Invalid input.\n");
             continue;
+        }else if (gameboard[(int8_t)cell]==1 || gameboard[(int8_t)cell]==2){
+            printf("Cell is already played.\n");
         }else{
             ok = 1;
             return (int8_t)cell;
