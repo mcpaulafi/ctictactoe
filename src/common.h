@@ -5,7 +5,7 @@
 
 #include <inttypes.h>
 
-#define BOARD_WIDTH 10
+#define BOARD_WIDTH 3
 
 extern int8_t debug; // debug mode 0=off, 1=on
 extern int8_t cell; // cell id which was last played
@@ -14,7 +14,7 @@ extern int8_t line[BOARD_WIDTH]; // array to hold the extracted line for checkin
 extern int8_t player; // current player (1 or 2)
 
 //Test gameboard for testing the functions
-extern int8_t gameboard[100];
+extern int8_t gameboard[BOARD_WIDTH*BOARD_WIDTH];
 
 typedef struct {
     int8_t col;
