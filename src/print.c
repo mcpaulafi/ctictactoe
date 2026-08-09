@@ -13,15 +13,15 @@ void print_gameboard(void) {
     for (int r = 0; r < board_width; r++) {
         printf("  ");
         for (int c = 0; c < board_width; c++) {
-            int8_t cell_idx = r * board_width + c+1;
+            int8_t cell_idx = r * board_width + c;
             int8_t cell_value = gameboard[cell_idx];
             char display_char[10]; // Buffer to hold the display string
             switch (cell_value) {
                 case 0:
                     if (cell_idx <10) {
-                        snprintf(display_char, sizeof(display_char), "%d  ", cell_idx);
+                        snprintf(display_char, sizeof(display_char), "%d  ", cell_idx+1);
                     } else {
-                        snprintf(display_char, sizeof(display_char), "%d ", cell_idx);
+                        snprintf(display_char, sizeof(display_char), "%d ", cell_idx+1);
                     }
                     break;
                 case 1:
@@ -38,5 +38,5 @@ void print_gameboard(void) {
         printf("\n");
     }
     printf("***********************************\n");
-    printf("\n\n");
+    printf("\n");
 }

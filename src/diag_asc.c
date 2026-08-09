@@ -18,7 +18,7 @@ int8_t extract_diagonal_ascending(int8_t row_idx, int8_t col_idx){
         start_cell = row_idx + col_idx; // Move up to the first row
     } else {
         int8_t start_row = (row_idx - ((board_width - 1) - col_idx)); //Move down to the last column
-        printf("Start row: %d\n", start_row);
+        if (debug) {printf("Start row: %d\n", start_row);}
         start_cell = board_width * (start_row + 1)-1; // Move down to the last row
     }
     if (debug) {printf("Start cell: %d\n", start_cell);}
@@ -26,7 +26,7 @@ int8_t extract_diagonal_ascending(int8_t row_idx, int8_t col_idx){
     int8_t cell_idx = start_cell;
     for (int i = 0; i < board_width; i++) {
         line[i] = gameboard[cell_idx];
-        if (debug) {printf("Cell: %d Value: %d\n", cell_idx, line[i]);}
+        if (debug) {printf("  Cell: %d Value: %d\n", cell_idx, line[i]);}
 
         cell_idx += (board_width - 1);
         if (cell_idx >= board_size) {

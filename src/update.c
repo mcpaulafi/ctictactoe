@@ -6,6 +6,7 @@
 #include "common.h"
 
 int8_t update_board(void){
+    if (debug) {printf("Update board[%d]\n", cell);}
     gameboard[cell] = player;
     return 0;
 }

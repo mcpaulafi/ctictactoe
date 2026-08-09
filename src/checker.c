@@ -2,23 +2,21 @@
 // Calculates consecutive cells in a line and checks for a winner
 #include <stdio.h>
 #include <inttypes.h>
-#include <string.h>
-#include <stdlib.h>
+
 #include "common.h"
-#include "extract_lines.h"
 #include "checker.h"
 
 
 int8_t check_line(void){
     int8_t counter = 0;
-    for (int i = 0; i < board_width; i++) {
-        if (line[i] != player) {
+    for (int i = 0; i < board_width; i++) { // Go through indexes
+        if (line[i] != player) { // Cell with other players value
             counter = 0; 
         } else {
             if (line[i] != 0) { // Only count non-zero values
                 counter++;
             }
-            if (counter == win_length) {
+            if (counter == win_length) { // Player has line of win_lenght
                 if (debug) {printf("Winner found at index %d\n", i);}
                 return 1; // Winner found
             }

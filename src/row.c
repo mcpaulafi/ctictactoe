@@ -18,7 +18,7 @@ int8_t extract_row(int8_t row_idx){
     if (debug) {printf("Checking row: %d\n", row_idx);}
     for (int c = 0; c < board_width; c++) {
         line[c] = gameboard[row_idx * board_width + c];
-        if (debug) {printf("Cell: %d Value: %d\n", row_idx * board_width + c, line[c]);}
+        if (debug) {printf("  Cell: %d Value: %d\n", row_idx * board_width + c, line[c]);}
     }
     return check_line();
 }

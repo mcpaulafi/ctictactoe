@@ -27,7 +27,7 @@ int8_t extract_diagonal_descending(int8_t row_idx, int8_t col_idx){
             break; // Stop if we go out of bounds
         }
         line[i] = gameboard[cell_idx];
-        if (debug) {printf("Cell: %d Value: %d\n", cell_idx, line[i]);}
+        if (debug) {printf("  Cell: %d Value: %d\n", cell_idx, line[i]);}
 
         Location location_check = give_location(cell_idx); // Column, Row
 

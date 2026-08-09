@@ -10,7 +10,7 @@
 * Precompiler instructions
 */
 #include <stdio.h>  // RW, files
-#include <inttypes.h> // Variable types
+#include <inttypes.h> // Variable types int8_t
 #include <string.h> 
 #include <stdlib.h> // Type conversions, memo, sys commands
 //#include <math.h> add -lm option to linker
@@ -34,7 +34,11 @@ int main(void) {
 
     memset(gameboard, 0, sizeof(gameboard)); //Initialize game board
     while(1){
-        printf("Player %d\n", player);
+        if (player == 1) {
+            player_name = 'X';
+        }else{
+            player_name = '0';
+        }
         print_gameboard();
         cell = input_cell();
         if (cell == -1){
@@ -48,11 +52,12 @@ int main(void) {
 
         if (result==1) {
             printf("***********************************\n");
-            printf("***** Win to player: %d !!!   *****\n", player);
+            printf("***** Win to player: %c !!!   *****\n", player_name);
             print_gameboard();
             return 0;
         } else if (result==-1){
             printf("Error\n");
+            return 0;
         }else { 
             printf("No win yet\n\n");
             if (player == 1) {
@@ -65,7 +70,3 @@ int main(void) {
     }
     return 0;
 }
-
-/* 
-* Functions
-*/

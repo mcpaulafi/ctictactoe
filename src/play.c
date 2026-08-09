@@ -14,20 +14,17 @@ int8_t input_cell(void){
 
         //Check if game is a tie
         for (int i = 0; i < board_size; i++) {
-            if (debug){printf("Cell[%d] %d\n",i, gameboard[i]);}  
+            if (debug){printf("Board[%d] %d\n",i, gameboard[i]);}  
             if (gameboard[i] == 0) {
                 has_empty_cell = 1;
 //                break;
             }
         }
-        if (debug){printf("EMpty cell %d\n",has_empty_cell);}
-        if (has_empty_cell==0){
-            return -1;
-        }
+        if (debug){printf("Empty cell found: %d\n",has_empty_cell);}
+
         has_empty_cell = 0;
 
-
-        printf("Player %d, Enter a cell number: ", player);
+        printf("Player %c! Enter a cell number: ", player_name);
         
         char buf[32];
         char extra;
@@ -51,11 +48,12 @@ int8_t input_cell(void){
         cell_input > board_size) {
             printf("Invalid input.\n");
             continue;
-        }else if (gameboard[(int8_t)cell_input]==1 || gameboard[(int8_t)cell_input]==2){
+        }else if (gameboard[(int8_t)cell_input-1]==1 || gameboard[(int8_t)cell_input-1]==2){
             printf("Cell is already played.\n");
         }else{
+            if(debug){printf("  Played cell: %d\n", cell_input);}
             ok = 1;
-            return (int8_t)cell_input;
+            return (int8_t)cell_input-1; //User gives values from 1 to width, board is 0 to w-1
         }
     }
 }
