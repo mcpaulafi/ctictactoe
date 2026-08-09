@@ -6,11 +6,12 @@ This is a simple text-based Tic-Tac-Toe game written in C programming language.
 Tämä on yksinkertainen tekstipohjainen ristinollapeli kirjoitettuna C-ohjelmointikielellä.
 
 ## Documentation
-TBD
+- [Architecture](docs/architecture.md)
 
 ## Known bugs and issues
-- Tests
+- Tests missing
 - UX need improvement
+- Make compiling
 
 ## Releases
 None yet.
