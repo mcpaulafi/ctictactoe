@@ -32,5 +32,5 @@ After installation
 
 ## Testing
 
-    gcc -Wall -Wextra -o testrun_col tests/test_col.c src/col.c
+    gcc -Wall -Wextra -o testrun_col tests/test_col.c src/col.c src/common.c
     ./testrun_col
