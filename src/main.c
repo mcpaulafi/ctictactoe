@@ -9,10 +9,10 @@
 /*
 * Precompiler instructions
 */
-#include <stdio.h>
-#include <inttypes.h>
-#include <string.h>
-#include <stdlib.h>
+#include <stdio.h>  // RW, files
+#include <inttypes.h> // Variable types
+#include <string.h> 
+#include <stdlib.h> // Type conversions, memo, sys commands
 //#include <math.h> add -lm option to linker
 
 /* 

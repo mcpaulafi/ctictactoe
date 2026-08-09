@@ -10,13 +10,13 @@
 Location give_location(int8_t localcell){
     Location invalid_location = {-1, -1};
 
-    if (localcell <=0 || localcell >= BOARD_WIDTH*BOARD_WIDTH) {
+    if (localcell <=0 || localcell >= board_size) {
         if(debug) {printf("Invalid cell index: %d\n", localcell);}
         return invalid_location; // Invalid cell index
     }
     Location loc = {
-        .col = localcell % BOARD_WIDTH,
-        .row = localcell / BOARD_WIDTH
+        .col = localcell % board_width,
+        .row = localcell / board_width
     };
 
     if (loc.col < 0 || loc.row < 0) {

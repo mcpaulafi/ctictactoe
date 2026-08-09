@@ -11,7 +11,7 @@
 
 int8_t check_line(void){
     int8_t counter = 0;
-    for (int i = 0; i < BOARD_WIDTH; i++) {
+    for (int i = 0; i < board_width; i++) {
         if (line[i] != player) {
             counter = 0; 
         } else {

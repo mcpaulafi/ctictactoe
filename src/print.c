@@ -10,10 +10,10 @@ void print_gameboard(void) {
     printf("***********************************\n");
     printf("*         Game Board              *\n");
     printf("***********************************\n");
-    for (int r = 0; r < BOARD_WIDTH; r++) {
+    for (int r = 0; r < board_width; r++) {
         printf("  ");
-        for (int c = 0; c < BOARD_WIDTH; c++) {
-            int8_t cell_idx = r * BOARD_WIDTH + c+1;
+        for (int c = 0; c < board_width; c++) {
+            int8_t cell_idx = r * board_width + c+1;
             int8_t cell_value = gameboard[cell_idx];
             char display_char[10]; // Buffer to hold the display string
             switch (cell_value) {

@@ -15,15 +15,15 @@ int8_t extract_diagonal_descending(int8_t row_idx, int8_t col_idx){
     if (row_idx == col_idx) {
         start_cell = 0; // Top-left corner
     } else if (row_idx > col_idx) {
-        start_cell = (row_idx - col_idx) * BOARD_WIDTH; // Move up to the first row
+        start_cell = (row_idx - col_idx) * board_width; // Move up to the first row
     } else {
         start_cell = col_idx - row_idx; // Move left to the first column
     }
     if (debug) {printf("Start cell: %d\n", start_cell);}
 
-    for (int i = 0; i < BOARD_WIDTH; i++) {
-        int8_t cell_idx = start_cell + i * (BOARD_WIDTH + 1);
-        if (cell_idx >= BOARD_WIDTH * BOARD_WIDTH) {
+    for (int i = 0; i < board_width; i++) {
+        int8_t cell_idx = start_cell + i * (board_width + 1);
+        if (cell_idx >= board_size) {
             break; // Stop if we go out of bounds
         }
         line[i] = gameboard[cell_idx];
@@ -31,7 +31,7 @@ int8_t extract_diagonal_descending(int8_t row_idx, int8_t col_idx){
 
         Location location_check = give_location(cell_idx); // Column, Row
 
-        if (location_check.row >= BOARD_WIDTH-1 || location_check.col >= BOARD_WIDTH-1) {
+        if (location_check.row >= board_width-1 || location_check.col >= board_width-1) {
             break; // Stop if we go out of the diagonal
         }
     }
