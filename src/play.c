@@ -17,8 +17,12 @@ int8_t input_cell(void){
             if (debug){printf("Board[%d] %d\n",i, gameboard[i]);}  
             if (gameboard[i] == 0) {
                 has_empty_cell = 1;
-//                break;
+                break;
             }
+        }
+        if (has_empty_cell == 0){
+            if (debug) {printf("Game is a tie.");}
+            return -1;
         }
         if (debug){printf("Empty cell found: %d\n",has_empty_cell);}
 

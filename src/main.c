@@ -40,10 +40,10 @@ int main(void) {
             player_name = '0';
         }
         print_gameboard();
-        cell = input_cell();
+        cell = input_cell(); //play.c
         if (cell == -1){
             printf("***********************************\n");
-            printf("***** Tie - no wins!!!   *****\n");
+            printf("*****  Tie - no wins!!!   *****\n");
             print_gameboard();
             return 0;
         }
@@ -52,7 +52,7 @@ int main(void) {
 
         if (result==1) {
             printf("***********************************\n");
-            printf("***** Win to player: %c !!!   *****\n", player_name);
+            printf("*****  Win to player: %c !!!   *****\n", player_name);
             print_gameboard();
             return 0;
         } else if (result==-1){

@@ -18,7 +18,7 @@ void print_gameboard(void) {
             char display_char[10]; // Buffer to hold the display string
             switch (cell_value) {
                 case 0:
-                    if (cell_idx <10) {
+                    if (cell_idx <9) {
                         snprintf(display_char, sizeof(display_char), "%d  ", cell_idx+1);
                     } else {
                         snprintf(display_char, sizeof(display_char), "%d ", cell_idx+1);
