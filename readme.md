@@ -9,9 +9,8 @@ Tämä on yksinkertainen tekstipohjainen ristinollapeli kirjoitettuna C-ohjelmoi
 TBD
 
 ## Known bugs and issues
-- Board size is not handled properly which causes error
-- Tie result
-- Top right corner check
+- Tests
+- UX need improvement
 
 ## Releases
 None yet.
