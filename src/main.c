@@ -20,6 +20,7 @@
 */
 
 #include "common.h"
+#include "settings.h"
 #include "extract_lines.h"
 #include "print.h"
 #include "play.h"
@@ -30,8 +31,8 @@
 *  Main function
 */
 int main(void) {
-    printf("* Win with line of: %d             *\n", win_length);
-
+    //printf("* Win with line of: %d             *\n", win_length);
+    set_game();
     memset(gameboard, 0, sizeof(gameboard)); //Initialize game board
     while(1){
         if (player == 1) {
