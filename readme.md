@@ -10,7 +10,6 @@ Tämä on yksinkertainen tekstipohjainen ristinollapeli kirjoitettuna C-ohjelmoi
 
 ## Known bugs and issues
 - Tests missing
-- UX need improvement
 - Make compiling
 
 ## Releases
@@ -23,7 +22,7 @@ None yet.
 
 ### Run compiler
 
-    gcc main.c common.c checker.c extract_lines.c location.c row.c col.c diag_asc.c diag_desc.c print.c play.c update.c -o program
+    gcc main.c common.c checker.c extract_lines.c location.c row.c col.c diag_asc.c diag_desc.c print.c play.c update.c new.c -o program
 
 
 ## Running

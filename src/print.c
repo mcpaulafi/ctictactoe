@@ -8,7 +8,7 @@
 
 void print_gameboard(void) {
     printf("***********************************\n");
-    printf("*         Game Board              *\n");
+    printf(GREEN "*         Game Board              *\n" RESET);
     printf("***********************************\n");
     for (int r = 0; r < board_width; r++) {
         printf("  ");
@@ -33,7 +33,13 @@ void print_gameboard(void) {
                 default:
                     strcpy(display_char, "?  "); // Unknown value
             }
-            printf("%s", display_char);
+            if (cell_value == 1){
+                printf(RED "%s" RESET, display_char);
+            }else if (cell_value == 2){
+                printf(GREEN "%s" RESET, display_char);
+            }else{
+                printf("%s", display_char);
+            }
         }
         printf("\n");
     }

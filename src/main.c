@@ -51,7 +51,11 @@ int main(void) {
                     break;
                 }
             case 4:
-                printf("WIN to player %c!!!!\n", PLAYER_NAME(player));
+                if (player == 1){
+                    printf(RED "WIN to player %c!!!!\n" RESET, PLAYER_NAME(player));
+                }else{
+                    printf(GREEN "WIN to player %c!!!!\n" RESET, PLAYER_NAME(player));
+                }
                 print_gameboard();
                 status = 7;
                 break;
