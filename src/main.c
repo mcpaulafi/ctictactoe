@@ -50,6 +50,7 @@ int main(void) {
                     status = 6; //Tie
                     break;
                 }
+                break;
             case 4:
                 if (player == 1){
                     printf(RED "WIN to player %c!!!!\n" RESET, PLAYER_NAME(player));
@@ -95,40 +96,3 @@ int main(void) {
     }
     return 0;
 }
-
-
-//printf("* Win with line of: %d             *\n", win_length);
- 
-//    set_game();
-//     memset(gameboard, 0, sizeof(gameboard)); //Initialize game board
-//     while(1){
-
-//         print_gameboard();
-//         cell = input_cell(); //play.c
-//         if (cell == -1){
-//             printf("***********************************\n");
-//             printf("*****  Tie - no wins!!!   *****\n");
-//             print_gameboard();
-//             return 0;
-//         }
-//         int update = update_board();
-//         int8_t result = extract_lines();
-
-//         if (result==1) {
-//             printf("***********************************\n");
-//             printf("*****  Win to player: %c !!!   *****\n", PLAYER_NAME(player));
-//             print_gameboard();
-//             return 0;
-//         } else if (result==-1){
-//             printf("Error\n");
-//             return 0;
-//         }else { 
-//             printf("No win yet\n\n");
-//             if (player == 1) {
-//                 player = 2;
-//             }else{
-//                 player = 1;
-//             }
-//             continue;
-//         } 
-//     }

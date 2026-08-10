@@ -35,7 +35,7 @@ int8_t extract_diagonal_descending(int8_t row_idx, int8_t col_idx){
             break; // Stop if we go out of the diagonal
         }
     }
-    if (sizeof(line) < win_length) {
+    if (sizeof(line) < (size_t)win_length) {
         return 0; // Diagonal line is too short to check for a win
     }
     return check_line();

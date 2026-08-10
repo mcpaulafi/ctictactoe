@@ -47,7 +47,7 @@ int8_t extract_diagonal_ascending(int8_t row_idx, int8_t col_idx){
 
 
     }
-    if (sizeof(line) < win_length) {
+    if (sizeof(line) < (size_t)win_length) {
         return 0; // Diagonal line is too short to check for a win
     }
     return check_line();

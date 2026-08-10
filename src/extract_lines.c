@@ -26,8 +26,8 @@ int8_t tie(void){
             if (debug) {printf("Game is a tie.");}
             return 1;
         }
+        return -1; //error
 }
-
 
 int8_t extract_lines(void){
     if (cell < 0 || cell >= board_size) {
