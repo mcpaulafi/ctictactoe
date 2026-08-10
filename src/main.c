@@ -26,7 +26,7 @@ int main(void) {
     while(running){
         switch(status){
             case 0:
-                printf("Settings for the new game.\n");
+                printf("Settings for a new TicTacToe-game.\n");
                 status = set_game();
                 break;
             case 1:

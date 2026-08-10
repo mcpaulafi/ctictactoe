@@ -27,21 +27,37 @@ Copy [w_cttt.exe](windows/w_cttt.exe) on your computer.
     cd ctictactoe
 
 ### Run Gnu compiler
-Makefile
+
     cd src
+
+Run Makefile for linux build
+
     make
 
-Clean *.o files after running
+Run Makefile for Windows build
+
+    make windows
+
+Clean *.o files and exe after running
+
     make clean
 
 OR shell command (debuging with warnings, additional and extra for C version c11)
+
     gcc -Wall -Wextra -Wpedantic -std=c11 *.c -o cttt
 
 OR without debuging
+
     gcc *.c -o cttt
 
-## Running
+## Running 
+Linux
+
     ./cttt
+
+Windows
+
+    Run w_cttt.exe and ignore warning
 
 ## Testing
 
