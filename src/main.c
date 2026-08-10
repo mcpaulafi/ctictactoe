@@ -80,7 +80,7 @@ int main(void) {
                     status = 0;
                     break;
                 }else{
-                    if(debug) {printf("End program.\n");}
+                    printf("End program.\n");
                     running = 0;
                     break;
                 }
