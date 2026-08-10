@@ -1,3 +1,4 @@
+/*Unit test for game states*/
 #include <stdint.h>
 #include <stdio.h>
 #include <assert.h>

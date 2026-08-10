@@ -61,12 +61,12 @@ Windows
     Run w_cttt.exe and ignore warning
 
 ## Testing
+Compiling individual test
 
     gcc -Wall -Wextra -o testrun_col tests/test_col.c src/col.c src/common.c
     ./testrun_col
 
-    gcc -Wall -Wextra -o testrun_row tests/test_row.c src/common.c src/row.c
-    ./testrun_row
+All tests
 
-    gcc -Wall -Wextra -o testrun_state tests/test_state.c src/common.c src/print.c src/game_state.c
-    ./testrun_state
+    gcc test/*.c src/game.c -o testrun
+    ./testrun
