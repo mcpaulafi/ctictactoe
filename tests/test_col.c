@@ -6,7 +6,6 @@
 #include <assert.h>
 #include "../include/common.h"
 #include "../include/col.h"
-#include "../include/checker.h"
 
 int8_t check_line(void){
     return 0; // mock
