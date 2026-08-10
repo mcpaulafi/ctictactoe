@@ -8,4 +8,5 @@ main.exe
 *.out
 build/
 program
+cttt
 testrun_*

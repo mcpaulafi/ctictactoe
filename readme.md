@@ -12,6 +12,9 @@ Tämä on yksinkertainen tekstipohjainen ristinollapeli kirjoitettuna C-ohjelmoi
 - Tests missing
 - Make compiling
 
+## Development ideas
+- Add also Win_length for user to set
+
 ## Releases
 None yet.
 
@@ -20,15 +23,22 @@ None yet.
     git clone ctictactoe
     cd ctictactoe
 
-### Run compiler
+### Run Gnu compiler
+Makefile
+    cd src
+    make
 
-    gcc main.c common.c checker.c extract_lines.c location.c row.c col.c diag_asc.c diag_desc.c print.c play.c update.c new.c -o program
+Clean *.o files after running
+    make clean
 
+OR shell command (debuging with warnings, additional and extra for C version c11)
+    gcc -Wall -Wextra -Wpedantic -std=c11 *.c -o cttt
+
+OR without debuging
+    gcc *.c -o cttt
 
 ## Running
-After installation
-
-    ./program
+    ./cttt
 
 ## Testing
 
