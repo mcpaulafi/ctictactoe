@@ -1,4 +1,6 @@
 # Architecture
+Main loops following switch cases.
+
 ## Stucture
 ```mermaid
 flowchart TB
@@ -6,11 +8,17 @@ flowchart TB
     Main -.-> Input
     Main -.-> Update
     Main -.-> Checker
-    Main -.-> Result
+    Main -.-> Win
+    Main -.-> Continue
+    Main -.-> Tie
+    Main -.-> New
+    Main -.-> End
+
 ```
 
 
 ## Playing the game
+Simplified logic.
 
 ```mermaid
 sequenceDiagram
@@ -39,7 +47,6 @@ sequenceDiagram
         Main->>User: Continue
     end
 
-    Main->>Main: Win, Tie
+    Main->>Main: Win, Tie, New game
 
 ```
-ma
