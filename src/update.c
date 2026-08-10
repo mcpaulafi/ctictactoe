@@ -7,6 +7,7 @@
 
 int8_t update_board(void){
     if (debug) {printf("Update board[%d]\n", cell);}
+    //TODO: Error handling
     gameboard[cell] = player;
-    return 0;
+    return 3; //Check result
 }

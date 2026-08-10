@@ -5,6 +5,6 @@
 
 #include <inttypes.h>
 
-void set_game(void);
+int8_t set_game(void);
 
 #endif

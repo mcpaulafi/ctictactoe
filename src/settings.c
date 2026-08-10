@@ -6,7 +6,7 @@
 #include "common.h"
 #include "settings.h"
 
-void set_game(void) {
+int8_t set_game(void) {
     int cell_input;
     int8_t ok = 0;
     while (ok != 1){
@@ -41,6 +41,8 @@ void set_game(void) {
             board_width = cell_input;
             board_size = cell_input*cell_input;
             win_length = cell_input;
+            return 1; //Start game
         }
     }
+    return 0;
 }

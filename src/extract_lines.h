@@ -6,6 +6,7 @@
 #include <inttypes.h>
 
 
+int8_t tie(void);
 int8_t extract_lines(void);
 
 #endif

@@ -12,6 +12,23 @@
 #include "checker.h"
 #include "location.h"
 
+int8_t tie(void){
+        //Check if game is a tie
+        int8_t has_empty_cell = 0;
+        for (int i = 0; i < board_size; i++) {
+            if (debug){printf("Empty cells? Board[%d] %d\n",i, gameboard[i]);}  
+            if (gameboard[i] == 0) {
+                has_empty_cell = 1;
+                return 0;
+            }
+        }
+        if (has_empty_cell == 0){
+            if (debug) {printf("Game is a tie.");}
+            return 1;
+        }
+}
+
+
 int8_t extract_lines(void){
     if (cell < 0 || cell >= board_size) {
         if (debug) {printf("Extract lines: Invalid cell index: %d\n", cell);}
@@ -32,6 +49,8 @@ int8_t extract_lines(void){
         return 1;
     }else if (extract_diagonal_ascending(location.row, location.col) == 1) {
         return 1;
+    }else if (tie()){
+        return -1;
     }else {
         return 0;
     }
