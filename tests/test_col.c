@@ -4,9 +4,9 @@
 #include <string.h>
 #include <stdlib.h>
 #include <assert.h>
-#include "../src/common.h"
-#include "../src/col.h"
-#include "../src/checker.h"
+#include "../include/common.h"
+#include "../include/col.h"
+#include "../include/checker.h"
 
 int8_t check_line(void){
     return 0; // mock

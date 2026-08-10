@@ -3,14 +3,14 @@
 #include <inttypes.h>
 #include <string.h>
 #include <stdlib.h>
-#include "common.h"
-#include "row.h"
-#include "col.h"
-#include "diag_asc.h"
-#include "diag_desc.h"
-#include "extract_lines.h"
-#include "checker.h"
-#include "location.h"
+#include "../include/common.h"
+#include "../include/row.h"
+#include "../include/col.h"
+#include "../include/diag_asc.h"
+#include "../include/diag_desc.h"
+#include "../include/extract_lines.h"
+#include "../include/checker.h"
+#include "../include/location.h"
 
 int8_t tie(void){
         //Check if game is a tie

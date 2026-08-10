@@ -3,8 +3,8 @@
 #include <stdio.h>
 #include <inttypes.h>
 
-#include "common.h"
-#include "checker.h"
+#include "../include/common.h"
+#include "../include/checker.h"
 
 
 int8_t check_line(void){

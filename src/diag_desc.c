@@ -3,10 +3,10 @@
 #include <inttypes.h>
 #include <string.h>
 #include <stdlib.h>
-#include "common.h"
-#include "diag_desc.h"
-#include "checker.h"
-#include "location.h"
+#include "../include/common.h"
+#include "../include/diag_desc.h"
+#include "../include/checker.h"
+#include "../include/location.h"
 
 int8_t extract_diagonal_descending(int8_t row_idx, int8_t col_idx){
     if (debug) {printf("Checking diagonal descending: \n");}

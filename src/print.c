@@ -3,8 +3,8 @@
 #include <inttypes.h>
 #include <string.h>
 #include <stdlib.h>
-#include "common.h"
-#include "print.h"
+#include "../include/common.h"
+#include "../include/print.h"
 
 void print_gameboard(void) {
     printf("***********************************\n");

@@ -4,7 +4,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-#include "common.h"
+#include "../include/common.h"
 
 int8_t input_cell(void){
     int cell_input;

@@ -1,6 +1,6 @@
 /* Init of common global variables */
 #include <inttypes.h>
-#include "common.h"
+#include "../include/common.h"
 
 //Settings for start
 int8_t debug = 0; // debug mode 0=off, 1=on

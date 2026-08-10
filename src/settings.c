@@ -3,8 +3,8 @@
 #include <inttypes.h>
 #include <string.h>
 #include <stdlib.h>
-#include "common.h"
-#include "settings.h"
+#include "../include/common.h"
+#include "../include/settings.h"
 
 int8_t set_game(void) {
     int cell_input;

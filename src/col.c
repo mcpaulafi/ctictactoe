@@ -2,10 +2,10 @@
 #include <stdio.h>
 #include <inttypes.h>
 #include <string.h> //memset
-//#include <stdlib.h>
-#include "common.h"
-#include "col.h"
-#include "checker.h"
+
+#include "../include/common.h"
+#include "../include/col.h"
+#include "../include/checker.h"
 
 int8_t extract_column(int8_t col_idx){
     // Check that column index is valid

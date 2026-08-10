@@ -3,9 +3,9 @@
 #include <inttypes.h>
 #include <string.h>
 #include <stdlib.h>
-#include "common.h"
-#include "extract_lines.h"
-#include "location.h"
+#include "../include/common.h"
+#include "../include/extract_lines.h"
+#include "../include/location.h"
 
 Location give_location(int8_t localcell){
     Location invalid_location = {-1, -1};

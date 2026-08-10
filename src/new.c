@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-#include "common.h"
+#include "../include/common.h"
 
 int8_t new(void){
     char cell_input;

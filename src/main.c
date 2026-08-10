@@ -4,7 +4,7 @@
 * Ristinolla (fin)
 * mcpaulafi 10th August 2026
 **************************************/
-// version 0.2
+// version 1.0.0
 
 #include <stdio.h>  // RW, files
 #include <inttypes.h> // Variable types int8_t
@@ -12,13 +12,13 @@
 #include <stdlib.h> // Type conversions, memo, sys commands
 //#include <math.h> add -lm option to linker
 
-#include "common.h"
-#include "settings.h"
-#include "extract_lines.h"
-#include "print.h"
-#include "play.h"
-#include "update.h"
-#include "new.h"
+#include "../include/common.h"
+#include "../include/settings.h"
+#include "../include/extract_lines.h"
+#include "../include/print.h"
+#include "../include/play.h"
+#include "../include/update.h"
+#include "../include/new.h"
 
 int main(void) {
     int8_t running = 1; //Loop

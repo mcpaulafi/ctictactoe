@@ -3,10 +3,10 @@
 #include <inttypes.h>
 #include <string.h>
 #include <stdlib.h>
-#include "common.h"
-#include "diag_asc.h"
-#include "checker.h"
-#include "location.h"
+#include "../include/common.h"
+#include "../include/diag_asc.h"
+#include "../include/checker.h"
+#include "../include/location.h"
 
 
 //Check diagonal ascending function

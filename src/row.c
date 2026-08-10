@@ -3,9 +3,9 @@
 #include <inttypes.h>
 #include <string.h>
 #include <stdlib.h>
-#include "common.h"
-#include "row.h"
-#include "checker.h"
+#include "../include/common.h"
+#include "../include/row.h"
+#include "../include/checker.h"
 
 //Check row function
 int8_t extract_row(int8_t row_idx){
