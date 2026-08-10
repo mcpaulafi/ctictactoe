@@ -41,6 +41,7 @@ int8_t set_game(void) {
             board_width = cell_input;
             board_size = cell_input*cell_input;
             win_length = cell_input;
+            memset(gameboard, 0, sizeof(gameboard));
             return 1; //Start game
         }
     }

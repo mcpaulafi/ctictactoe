@@ -4,7 +4,7 @@
 * Ristinolla (fin)
 * mcpaulafi 10th August 2026
 **************************************/
-// version 0.1
+// version 0.2
 
 #include <stdio.h>  // RW, files
 #include <inttypes.h> // Variable types int8_t
@@ -18,6 +18,7 @@
 #include "print.h"
 #include "play.h"
 #include "update.h"
+#include "new.h"
 
 int main(void) {
     int8_t running = 1; //Loop
@@ -25,7 +26,7 @@ int main(void) {
     while(running){
         switch(status){
             case 0:
-                if(debug) {printf("Set game\n");}
+                printf("Settings for the new game.\n");
                 status = set_game();
                 break;
             case 1:
@@ -43,19 +44,20 @@ int main(void) {
                 if (result == 1) {
                     status = 4; //Win
                 }else if (result == 0) {
-                    status = 5;
+                    status = 5; //Continue
                     break;
                 }else{
                     status = 6; //Tie
                     break;
                 }
             case 4:
-                if(debug) {printf("Win\n");}
-                running = 0;
+                printf("WIN to player %c!!!!\n", PLAYER_NAME(player));
+                print_gameboard();
+                status = 7;
                 break;
             case 5:
-                printf("No win yet\n\n");
-                if (player == 1) {
+                printf("No win yet. Continue.\n\n");
+                if (player == 1) { //Switch player
                     player = 2;
                 }else{
                     player = 1;
@@ -63,9 +65,21 @@ int main(void) {
                 status = 1;
                 break;
             case 6:
-                if(debug) {printf("Tie\n");}
-                running = 0;
+                printf("TIE! Game over.\n");
+                print_gameboard();
+                status = 7;
                 break;
+            case 7:
+                if(debug) {printf("New game?\n");}
+                int8_t start_new = new();
+                if (start_new == 1){
+                    status = 0;
+                    break;
+                }else{
+                    if(debug) {printf("End program.\n");}
+                    running = 0;
+                    break;
+                }
             case -1:
                 printf("Error\n");
                 running = 0;
