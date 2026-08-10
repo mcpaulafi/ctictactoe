@@ -7,6 +7,7 @@ Tämä on yksinkertainen tekstipohjainen ristinollapeli kirjoitettuna C-ohjelmoi
 
 ## Documentation
 - [Architecture](docs/architecture.md)
+- [User manual](docs/manual.md)
 
 ## Known issues
 - Many unit tests missing
