@@ -8,15 +8,18 @@ Tämä on yksinkertainen tekstipohjainen ristinollapeli kirjoitettuna C-ohjelmoi
 ## Documentation
 - [Architecture](docs/architecture.md)
 
-## Known bugs and issues
-- Tests missing
-- Make compiling
+## Known issues
+- Many unit tests missing
 
 ## Development ideas
 - Add also Win_length for user to set
 
 ## Releases
 None yet.
+
+## Installation on Windows
+
+Copy [w_cttt.exe](windows/w_cttt.exe) on your computer.
 
 ## Installation on Linux
 
