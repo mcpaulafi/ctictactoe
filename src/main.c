@@ -2,22 +2,15 @@
 /**************************************
 * Tic-tac-toe
 * Ristinolla (fin)
-* mcpaulafi 8th August 2026
+* mcpaulafi 10th August 2026
 **************************************/
 // version 0.1
 
-/*
-* Precompiler instructions
-*/
 #include <stdio.h>  // RW, files
 #include <inttypes.h> // Variable types int8_t
 #include <string.h> 
 #include <stdlib.h> // Type conversions, memo, sys commands
 //#include <math.h> add -lm option to linker
-
-/* 
-* Include my own libraries
-*/
 
 #include "common.h"
 #include "settings.h"
@@ -26,20 +19,13 @@
 #include "play.h"
 #include "update.h"
 
-
-/* 
-*  Main function
-*/
 int main(void) {
     //printf("* Win with line of: %d             *\n", win_length);
     set_game();
     memset(gameboard, 0, sizeof(gameboard)); //Initialize game board
     while(1){
-        if (player == 1) {
-            player_name = 'X';
-        }else{
-            player_name = '0';
-        }
+        char player_name = PLAYER_NAME(player);
+
         print_gameboard();
         cell = input_cell(); //play.c
         if (cell == -1){

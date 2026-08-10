@@ -28,7 +28,7 @@ int8_t input_cell(void){
 
         has_empty_cell = 0;
 
-        printf("Player %c! Enter a cell number: ", player_name);
+        printf("Player %c! Enter a cell number: ", PLAYER_NAME(player));
         
         char buf[32];
         char extra;
