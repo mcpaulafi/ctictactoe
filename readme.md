@@ -16,7 +16,7 @@ Tämä on yksinkertainen tekstipohjainen ristinollapeli kirjoitettuna C-ohjelmoi
 - Add also Win_length for user to set
 
 ## Releases
-None yet.
+- [Version 1.0.0](releases/tag/release)
 
 ## Installation on Windows
 
