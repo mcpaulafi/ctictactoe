@@ -14,7 +14,7 @@ flowchart TB
 
 
 ## Playing the game
-Logic in the program. Function new() can also return case -1 which ends the loop and main.
+Logic in the program in case of tie. Function new() can also return case -1 which ends the loop and main.
 
 ```mermaid
 sequenceDiagram
@@ -54,9 +54,18 @@ sequenceDiagram
         Game_state ->> Extract_lines: extract_lines()
         Extract_lines ->> Location: give_location(cell)
         Extract_lines ->> Row: extract_row(location.row)
-        Extract_lines ->> Row: extract_col(location.col)
+        Row ->> Checker: check_line()
+        Checker --> Row: 0
+        Row ->> Extract_lines: 0
+        Extract_lines ->> Col: extract_col(location.col)
+        Checker --> Col: 0
+        Col ->> Extract_lines: 0
         Extract_lines ->> Diag_desc: extract_diagonal_descending(location.row, location.col)
+        Checker --> Diag_desc: 0
+        Diag_desc ->> Extract_lines: 0
         Extract_lines ->> Diag_asc: extract_diagonal_ascending(location.row, location.col)
+        Checker --> Diag_asc: 0
+        Diag_asc ->> Extract_lines: 0
         Extract_lines ->> Extract_lines: tie()
         Extract_lines ->> Main: case 0
     end
