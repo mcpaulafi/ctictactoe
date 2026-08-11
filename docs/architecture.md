@@ -46,6 +46,8 @@ sequenceDiagram
         Settings ->> Game_state: case 1
         Game_state ->> Print: print_gameboard()
         Game_state ->> Play: input_cell()
+        Play ->> User: scanf()
+        User ->> Play: cell
         Play ->> Game_state: case 2
         Game_state ->> Update: update_board()
         Update ->> Game_state: case 3
