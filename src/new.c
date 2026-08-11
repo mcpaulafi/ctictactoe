@@ -13,7 +13,7 @@ int8_t new(void){
     int ok = 1;
     while (ok == 1){
 
-        printf("Start a new game Y/N? ");
+        printf("Start a new Tic-Tac-Toe game Y/N? ");
         
         char buf[32];
         char extra;

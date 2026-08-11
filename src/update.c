@@ -7,7 +7,9 @@
 
 int8_t update_board(void){
     if (debug) {printf("Update board[%d]\n", cell);}
-    //TODO: Error handling
+    if(cell>=board_size || cell<0){
+        return -1;
+    }
     gameboard[cell] = player;
     return 3; //Check result
 }
