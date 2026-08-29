@@ -15,6 +15,7 @@ int8_t check_line(void){
         } else {
             if (line[i] != 0) { // Only count non-zero values
                 counter++;
+                if (debug) {printf("\t Counter %d / %d\n", counter, win_length);}
             }
             if (counter == win_length) { // Player has line of win_lenght
                 if (debug) {printf("Winner found at index %d\n", i);}

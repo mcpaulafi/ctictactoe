@@ -68,6 +68,7 @@ Compiling individual test
     gcc -Wall -Wextra -o testrun tests/test_state.c src/print.c src/common.c src/game_state.c
     gcc -Wall -Wextra -o testrun tests/test_diag_asc.c src/diag_asc.c src/common.c src/location.c
     gcc -Wall -Wextra -o testrun tests/test_diag_desc.c src/diag_desc.c src/common.c src/location.c
+    gcc -Wall -Wextra -o testrun tests/test_checker.c src/checker.c src/common.c
 
 Run test
 
