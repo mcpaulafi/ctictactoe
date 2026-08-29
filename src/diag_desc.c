@@ -18,13 +18,10 @@ int8_t extract_diagonal_descending(int8_t row_idx, int8_t col_idx){
     int8_t start_cell;
     if (row_idx == col_idx) {
         start_cell = 0; // Top-left corner
-        if(debug){printf("\t Start 0\n");}
     } else if (row_idx > col_idx) {
         start_cell = (row_idx - col_idx) * board_width; // Move up to the first row
-        if(debug){printf("\t Start up %d\n", start_cell);}
     } else {
         start_cell = col_idx - row_idx; // Move left to the first column
-        if(debug){printf("\t Start left\n");}
     }
     if (debug) {printf("Start cell: %d\n", start_cell);}
 
