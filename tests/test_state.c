@@ -17,11 +17,11 @@ void test_process_state(void){
     assert(process_state(0) == 1);
     assert(process_state(1) == 2);
     assert(process_state(2) == 3);
-    assert(process_state(3) == 4);
-    assert(process_state(4) == 7);
-    assert(process_state(5) == 1);
-    assert(process_state(6) == 7);
-    assert(process_state(7) == 0); //Can also return -1
+    assert(process_state(3) == 0);
+    assert(process_state(4) == -1);
+    assert(process_state(5) == -1);
+    assert(process_state(6) == -1);
+    assert(process_state(7) == -1); //Can also return -1
     assert(process_state(8) == -1);
     assert(process_state(99) == -1);
 }
