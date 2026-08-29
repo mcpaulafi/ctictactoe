@@ -11,13 +11,20 @@
 int8_t extract_diagonal_descending(int8_t row_idx, int8_t col_idx){
     if (debug) {printf("Checking diagonal descending: \n");}
     memset(line, 0, sizeof(line)); // Reset line array
+    if (row_idx < 0 || col_idx<0 || row_idx >= board_width || col_idx >= board_width){
+        if (debug) {printf("Checking diagonal descending: invalid row or column\n");}
+        return -1;
+    }
     int8_t start_cell;
     if (row_idx == col_idx) {
         start_cell = 0; // Top-left corner
+        if(debug){printf("\t Start 0\n");}
     } else if (row_idx > col_idx) {
         start_cell = (row_idx - col_idx) * board_width; // Move up to the first row
+        if(debug){printf("\t Start up %d\n", start_cell);}
     } else {
         start_cell = col_idx - row_idx; // Move left to the first column
+        if(debug){printf("\t Start left\n");}
     }
     if (debug) {printf("Start cell: %d\n", start_cell);}
 
@@ -32,6 +39,7 @@ int8_t extract_diagonal_descending(int8_t row_idx, int8_t col_idx){
         Location location_check = give_location(cell_idx); // Column, Row
 
         if (location_check.row >= board_width-1 || location_check.col >= board_width-1) {
+            
             break; // Stop if we go out of the diagonal
         }
     }
