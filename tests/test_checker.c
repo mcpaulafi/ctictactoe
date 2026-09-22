@@ -1,4 +1,4 @@
-/* Unit test for column */
+/* Unit test for checker */
 #include <stdio.h>
 #include <inttypes.h>
 #include <string.h>

@@ -41,17 +41,23 @@ int8_t extract_lines(void){
 
     //Check row, column, and diagonals
     if (extract_row(location.row) == 1) {
+        if(debug) {printf("\t Win on Row\n");}
         return 1;
     }
     else if (extract_column(location.col) == 1) {
+        if(debug) {printf("\t Win on Column\n");}
         return 1;
     }else if (extract_diagonal_descending(location.row, location.col) == 1) {
+        if(debug) {printf("\t Win on Descending\n");}
         return 1;
     }else if (extract_diagonal_ascending(location.row, location.col) == 1) {
+        if(debug) {printf("\t Win on Ascending\n");}
         return 1;
     }else if (tie()){
+        if(debug) {printf("\t Tie\n");}
         return -1;
     }else {
+        if(debug) {printf("\t No Win yet\n");}
         return 0;
     }
 }

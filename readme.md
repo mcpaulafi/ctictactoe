@@ -61,20 +61,19 @@ Windows
     Run w_cttt.exe and ignore warning
 
 ## Testing
-Compiling individual test
 
-    gcc -Wall -Wextra -o testrun tests/test_col.c src/col.c src/common.c
-    gcc -Wall -Wextra -o testrun tests/test_row.c src/row.c src/common.c
-    gcc -Wall -Wextra -o testrun tests/test_state.c src/print.c src/common.c src/game_state.c
-    gcc -Wall -Wextra -o testrun tests/test_diag_asc.c src/diag_asc.c src/common.c src/location.c
-    gcc -Wall -Wextra -o testrun tests/test_diag_desc.c src/diag_desc.c src/common.c src/location.c
-    gcc -Wall -Wextra -o testrun tests/test_checker.c src/checker.c src/common.c
+Compiling tests (only)
 
-Run test
+    make tests
 
-    ./testrun
+Run all tests
 
-All tests
+    make run-tests
 
-    gcc test/*.c src/game.c -o testrun
-    ./testrun
+Build one test (example)
+
+    make test_col
+
+Then run test (example)
+
+    ./test_col

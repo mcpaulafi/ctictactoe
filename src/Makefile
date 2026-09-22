@@ -19,5 +19,60 @@ windows: $(SRC)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
+# TESTS
+
+TESTS = \
+	test_col \
+	test_row \
+	test_state \
+	test_diag_asc \
+	test_diag_desc \
+	test_checker \
+	test_extract_lines
+
+test: $(TESTS)
+	@echo "All tests built"
+	./test_col
+	./test_row
+	./test_state
+	./test_diag_asc
+	./test_diag_desc
+	./test_checker
+	./test_extract_lines.
+
+test_col: ../tests/test_col.c col.c common.c
+	$(CC) $(CFLAGS) -o $@ $^
+
+test_row: ../tests/test_row.c row.c common.c
+	$(CC) $(CFLAGS) -o $@ $^
+
+test_state: ../tests/test_state.c print.c common.c game_state.c
+	$(CC) $(CFLAGS) -o $@ $^
+
+test_diag_asc: ../tests/test_diag_asc.c diag_asc.c common.c location.c
+	$(CC) $(CFLAGS) -o $@ $^
+
+test_diag_desc: ../tests/test_diag_desc.c diag_desc.c common.c location.c
+	$(CC) $(CFLAGS) -o $@ $^
+
+test_checker: ../tests/test_checker.c checker.c common.c
+	$(CC) $(CFLAGS) -o $@ $^
+
+test_extract_lines: ../tests/test_extract_lines.c extract_lines.c common.c location.c
+	$(CC) $(CFLAGS) -o $@ $^
+
+tests: $(TESTS)
+
+run-tests: tests
+	./test_col
+	./test_row
+	./test_state
+	./test_diag_asc
+	./test_diag_desc
+	./test_checker
+	./test_extract_lines
+
+# CLEAN UP TEST FILES and OBJECT FILES
+
 clean:
-	rm -f $(OBJ) cttt ../windows/w_cttt.exe
+	rm -f $(OBJ) cttt ../windows/w_cttt.exe $(TESTS)
