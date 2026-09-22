@@ -27,7 +27,7 @@ void test_get_location_index_past_board_size(void){
     board_size = 9;
     Location loc = give_location(10);
     assert(loc.row == -1);
-    assert(loc.col == -1); 
+    assert(loc.col == -1);
 }
 
 int main(void) {
