@@ -28,7 +28,8 @@ TESTS = \
 	test_diag_asc \
 	test_diag_desc \
 	test_checker \
-	test_extract_lines
+	test_extract_lines \
+	test_location
 
 test: $(TESTS)
 	@echo "All tests built"
@@ -38,7 +39,8 @@ test: $(TESTS)
 	./test_diag_asc
 	./test_diag_desc
 	./test_checker
-	./test_extract_lines.
+	./test_extract_lines
+	./test_location
 
 test_col: ../tests/test_col.c col.c common.c
 	$(CC) $(CFLAGS) -o $@ $^
@@ -61,6 +63,9 @@ test_checker: ../tests/test_checker.c checker.c common.c
 test_extract_lines: ../tests/test_extract_lines.c extract_lines.c common.c location.c
 	$(CC) $(CFLAGS) -o $@ $^
 
+test_location: ../tests/test_location.c location.c common.c
+	$(CC) $(CFLAGS) -o $@ $^
+
 tests: $(TESTS)
 
 run-tests: tests
@@ -71,6 +76,7 @@ run-tests: tests
 	./test_diag_desc
 	./test_checker
 	./test_extract_lines
+	./test_location
 
 # CLEAN UP TEST FILES and OBJECT FILES
 
