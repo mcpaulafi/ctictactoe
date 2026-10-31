@@ -1,8 +1,8 @@
 
 /**************************************
-* Tic-tac-toe
+* Tic-tac-toe for C
 * Ristinolla (fin)
-* mcpaulafi 10th August 2026
+* mcpaulafi 22nd September 2026
 **************************************/
 // version 1.0.1
 
