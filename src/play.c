@@ -28,7 +28,7 @@ int8_t parse_cell_input(const char *buf){
         return -2; // Cell already played
     }
 
-    return (int8_t)(cell_input - 1); // Valid input
+    return (int8_t)(cell_input); // Valid input
 }
 
 int8_t input_cell(void){
@@ -48,7 +48,7 @@ int8_t input_cell(void){
         //printf("Parsed cell input: %d\n", result); // Debugging line
 
         if (result > 0) {
-            cell = result;
+            cell = result-1;
             ok = 0;
             return 2; // to checker
         }
