@@ -30,7 +30,8 @@ TESTS = \
 	test_checker \
 	test_extract_lines \
 	test_location \
-	test_new
+	test_new \
+	test_play
 
 test: $(TESTS)
 	@echo "All tests built"
@@ -43,6 +44,7 @@ test: $(TESTS)
 	./test_extract_lines
 	./test_location
 	./test_new
+	./test_play
 
 test_col: ../tests/test_col.c col.c common.c
 	$(CC) $(CFLAGS) -o $@ $^
@@ -71,6 +73,9 @@ test_location: ../tests/test_location.c location.c common.c
 test_new: ../tests/test_new.c new.c common.c
 	$(CC) $(CFLAGS) -o $@ $^
 
+test_play: ../tests/test_play.c play.c common.c
+	$(CC) $(CFLAGS) -o $@ $^
+
 tests: $(TESTS)
 
 run-tests: tests
@@ -83,6 +88,7 @@ run-tests: tests
 	./test_extract_lines
 	./test_location
 	./test_new
+	./test_play
 
 # CLEAN UP TEST FILES and OBJECT FILES
 

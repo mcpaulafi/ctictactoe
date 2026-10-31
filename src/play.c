@@ -6,15 +6,34 @@
 
 #include "../include/common.h"
 
-int8_t input_cell(void){
+int8_t parse_cell_input(const char *buf){
     int cell_input;
-    int ok = 1;
+    char extra;
+
+    //White space check
+    if (strspn(buf, " \t\n") == strlen(buf))
+        return -1;
+
+    //Check for extra characters, spaces in between, enter
+    if (sscanf(buf, "%d %c", &cell_input, &extra) != 1 ||
+        cell_input < 1 ||
+        cell_input > board_size) {
+        return -1;
+    } 
+    
+    if (gameboard[(int8_t)cell_input-1]==1 || gameboard[(int8_t)cell_input-1]==2){
+        return -2; // Cell already played
+    }
+
+    return (int8_t)(cell_input - 1); // Valid input
+}
+
+int8_t input_cell(void){
+    char buf[32];
+    int8_t ok = 1;
     while (ok == 1){
 
         printf("Player %c! Enter a cell number: ", PLAYER_NAME(player));
-        
-        char buf[32];
-        char extra;
 
         //Empty inputs
         if (fgets(buf, sizeof(buf), stdin) == NULL) {
@@ -22,26 +41,19 @@ int8_t input_cell(void){
             continue;
         }
 
-        //White space inputs
-        if (strspn(buf, " \t\n") == strlen(buf)) {
-            printf("Empty input.\n");
-            continue;
-        }
+        int8_t result = parse_cell_input(buf);
 
-        //Extra characters, spaces in between, enter
-        if (sscanf(buf, "%d %c", &cell_input, &extra) != 1 ||
-        cell_input < 1 ||
-        cell_input > board_size) {
-            printf("Invalid input.\n");
-            continue;
-        }else if (gameboard[(int8_t)cell_input-1]==1 || gameboard[(int8_t)cell_input-1]==2){
+        if (result >=0) {
+            cell = result;
+            ok = 0;
+            return 2; // to checker
+        }
+        if (result == -2){
             printf("Cell is already played.\n");
             continue;
         }else{
-            if(debug){printf("  Played cell: %d\n", cell_input);}
-            cell = (int8_t)cell_input-1; //User gives values from 1 to width, board is 0 to w-1
-            ok = 0;
-            return 2; // Checker
+            printf("Invalid input.\n");
+            continue;
         }
     }
     return -1; //Error

@@ -4,6 +4,7 @@
 
 #include <inttypes.h>
 
+int8_t parse_cell_input(const char *buf);
 int8_t input_cell(void);
 
 #endif
