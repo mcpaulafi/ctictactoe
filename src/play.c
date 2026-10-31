@@ -18,6 +18,9 @@ int8_t parse_cell_input(const char *buf){
     if (sscanf(buf, "%d %c", &cell_input, &extra) != 1 ||
         cell_input < 1 ||
         cell_input > board_size) {
+        if(cell_input == 0){
+            return 0; // restart or end game
+        }
         return -1;
     } 
     
@@ -42,11 +45,16 @@ int8_t input_cell(void){
         }
 
         int8_t result = parse_cell_input(buf);
+        //printf("Parsed cell input: %d\n", result); // Debugging line
 
-        if (result >=0) {
+        if (result > 0) {
             cell = result;
             ok = 0;
             return 2; // to checker
+        }
+        if (result == 0) {
+            printf("Exiting game...\n");
+            return 0; // restart or end game
         }
         if (result == -2){
             printf("Cell is already played.\n");
