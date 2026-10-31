@@ -10,7 +10,7 @@ Tämä on yksinkertainen tekstipohjainen ristinollapeli kirjoitettuna C-ohjelmoi
 - [User manual](docs/manual.md)
 
 ## Known issues
-- Unit tests missing:  print, update
+- Unit tests missing:  print
 
 ## Development ideas
 - Add also Win_length for user to set
