@@ -94,7 +94,7 @@ run-tests: tests
 	./test_location
 	./test_new
 	./test_play
-	./run_update
+	./test_update
 
 # CLEAN UP TEST FILES and OBJECT FILES
 

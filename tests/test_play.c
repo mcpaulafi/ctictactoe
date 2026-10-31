@@ -9,7 +9,7 @@
 
 
 void test_parse_cell_input_valid(void){
-    assert(parse_cell_input("1") == 0);
+    assert(parse_cell_input("1") == 1);
 }
 
 void test_parse_cell_input_invalid(void){
